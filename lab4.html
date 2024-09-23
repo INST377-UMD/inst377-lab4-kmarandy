@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Lab 4</title>
+    <link rel="stylesheet" type="text/css" href="lab4_style.css">
+    <h1 id="heading"> INST377 - Lab 4</h1>
+</head>
+
+<body>
+
+    <div class="sectionsLeft">
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Name" required>
+            <button onclick="alertMe()">Alert Me!</button>
+        </form>
+        
+    </div>
+
+    <div class="sectionsRight">
+        <button onclick="changeColor()">Change Color</button>
+    </div>
+
+    <div class="sectionsLeft">
+        <form name="textTester">
+            <label for="test">Text Tester</label>
+            <input type="text" id="tester" name="tester" required>
+            <button onclick="return(validationTester())">Validate Text</button>
+        </form>
+    </div>
+
+    <div class="sectionsRight">
+        <button onclick=addText()>Add Text</button>
+
+    </div>
+
+    <script type="text/javascript">
+
+        function alertMe() {
+            const name = document.getElementById('name').value; 
+                alert(`Hi ${name}!`); 
+        }
+
+        function changeColor() {
+            if(document.body.style.backgroundColor == "lightblue") {
+                document.body.style.backgroundColor = "green";
+            }
+            else {
+                document.body.style.backgroundColor = "lightblue";
+            }
+                
+        }
+   
+        function validationTester(){
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (validation.test(document.textTester.tester.value)) {
+            alert('How about nah')
+            return false
+                }
+        }
+        function addText(){
+            const heading = document.getElementById('heading')
+            heading.textContent += ' - Add Text'
+        }
+    </script>
+
+</body>
