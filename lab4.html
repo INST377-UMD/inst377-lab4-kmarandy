@@ -3,7 +3,7 @@
 <head>
     <title>Lab 4</title>
     <link rel="stylesheet" type="text/css" href="lab4_style.css">
-    <h1> INST377 - Lab 4</h1>
+    <h1 id="heading"> INST377 - Lab 4</h1>
 </head>
 
 <body>
@@ -16,8 +16,9 @@
         </form>
         <script type="text/javascript">
             function alertMe() {
-                alert('Hi {name}')
-            }
+            const name = document.getElementById('name').value; 
+                alert(`Hi ${name}!`); 
+        }
         </script>
     </div>
 
@@ -54,7 +55,14 @@
     </div>
 
     <div class="sectionsRight">
-        <button onclick="">Add Text</button>
+        <button onclick=addText()>Add Text</button>
+        <script type="text/javascript">
+            function addText(){
+                const heading = document.getElementById('heading')
+                heading.textContent += ' - Add Text'
+            }
+        </script>
+
     </div>
 
 </body>
